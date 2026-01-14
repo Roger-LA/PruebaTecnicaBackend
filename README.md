@@ -2,4 +2,10 @@
 
 Prueba Técnica BackEnd
 
-Favor de leer los pasos a seguir en el archivo Instrucciones.md
+Cohorte 61
+
+14 de enero de 2026
+
+15:35 hrs
+
+Rogelio Luis Almazan
