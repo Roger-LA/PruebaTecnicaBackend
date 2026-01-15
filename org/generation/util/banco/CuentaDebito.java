@@ -2,11 +2,11 @@ package org.generation.util.banco;
 
 import java.util.Date;
 
-public class CuentaDebito extends Cuenta{
+public class CuentaDebito extends Cuenta {
 	private double montoMinimo;
 
-	public CuentaDebito(double saldo, String numeroCliente, Date fechaApertura, String nombreCliente,
-			double montoMinimo) {
+	public CuentaDebito(double saldo, String numeroCliente, Date fechaApertura, 
+			double montoMinimo, String nombreCliente) {
 		super(saldo, numeroCliente, fechaApertura, nombreCliente);
 		this.montoMinimo = montoMinimo;
 	}//constructorCuentaDebito
@@ -19,32 +19,32 @@ public class CuentaDebito extends Cuenta{
 		this.montoMinimo = montoMinimo;
 	}//setMontoMinimo
 
-	public double retiro(double cantidad) {
-        if (cantidad <= this.saldo) {
-            this.saldo -= cantidad;
-            System.out.println("Retiro exitoso.");
-        } else {
-            System.out.println("Error: Saldo insuficiente para retirar " + cantidad);
-        }
-        return this.saldo;
-    }//metodoRetiro
-
-
-	public double deposito(double cantidad) {
-		if(cantidad > 0) {
-			this.saldo += cantidad;
-		}
-		return this.saldo;
-	}//deposito
-
+	@Override
 	public double getSaldo() {
-		// TODO Auto-generated method stub
 		return this.saldo;
 	}//getSaldo
 
+	@Override
+	public double retiro(double cantidad) {
+		if (cantidad <= this.saldo) {
+			this.saldo -= cantidad;
+		} else {
+			System.out.println("Saldo insuficiente");
+		}
+		return this.saldo;
+	}//metodoRetiro
+
+	@Override
+	public double deposito(double cantidad) {
+		if (cantidad > 0) {
+			this.saldo += cantidad;
+		}
+		return this.saldo;
+	}//metodoDeposito
+
+	@Override
 	public String toString() {
 		return "Cuenta Débito [" + super.toString() + 
 				", Monto mínimo=" + montoMinimo + "]";
 	}//toString
-	
-}//clase cuenta debito
+}//classCuentaDebito
