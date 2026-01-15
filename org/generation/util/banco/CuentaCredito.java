@@ -6,7 +6,6 @@ public class CuentaCredito extends Cuenta {
 	private double limite;
 	private double tasa;
 	private Date fechaCorte;
-	private Date fechaLimitePago;
 
 public CuentaCredito(double saldo, String numeroCliente, Date fechaCorte, 
 			Date fechaApertura, double tasa, double limite, String nombreCliente) {
@@ -14,8 +13,6 @@ public CuentaCredito(double saldo, String numeroCliente, Date fechaCorte,
 		this.fechaCorte = fechaCorte;
 		this.tasa = tasa;
 		this.limite = limite;
-		// Nota: El constructor de SimulaBanco no parece pasar fechaLimitePago
-		this.fechaLimitePago = fechaCorte; 
 	}//constructorCuentaCredito
 
 	public double getLimite() { return limite; }

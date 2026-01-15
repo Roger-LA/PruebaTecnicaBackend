@@ -35,6 +35,7 @@ public abstract class Cuenta implements Imprimible{
 	    }//if numCliente.equals
 		this.fechaApertura = fechaApertura;
 	}//constructor
+	
 	public Cuenta(double saldo) {
 		this.saldo=saldo;
 	}//constructor
@@ -52,7 +53,7 @@ public abstract class Cuenta implements Imprimible{
 	}//getConsecutivo
 
 	public int getNumeroCuenta() {
-		return numeroCuenta;
+		return this.numeroCuenta;
 	}//getNumeroCuenta
 
 	public String getNumeroCliente() {

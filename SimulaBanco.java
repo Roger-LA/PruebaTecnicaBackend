@@ -6,6 +6,7 @@ import org.generation.util.ReciboSaldo;
 import org.generation.util.banco.Cuenta;
 import org.generation.util.banco.CuentaCredito;
 import org.generation.util.banco.CuentaDebito;
+import org.generation.util.extras.TarjetaRegalo;
 
 public class SimulaBanco {
 	public static void main(String[] args) {
@@ -24,6 +25,11 @@ public class SimulaBanco {
 		
 	    ReciboSaldo.Imprimir(cuentas.get(1001));
 	    ReciboSaldo.Imprimir(cuentas.get(1002));
+	    
+	    TarjetaRegalo miTarjeta = new TarjetaRegalo(9999, 500.00, "Certificado de Regalo");
+        
+        System.out.println(miTarjeta.toString());
+        ReciboSaldo.Imprimir(miTarjeta);
 		
 	}//main
 }//class Banco
